@@ -1,0 +1,21 @@
+Byte ,Bit ,Name of Field ,Description,Flash Addr
+128,7-0 ,CC_APPS ,"Check code for the AST: the check code
+shall be the low order bits of the sum
+of the contents of all the bytes from
+129 to 255, inclusive.",EE92
+129,7-6,Reserved,,EE93
+129,5-0 ,"AST Table Length, TL
+(length - 1)","A 6 bit binary number. TL, specifies
+the offset of the last application
+table entry defined in Bytes 130-255.
+TL is valid between 0 (1 entry) and 62
+(for a total of 63 entries)",EE94
+"130,131","7-0,7-
+0",Application Code 0 ,"Definition of first application
+supported (See Table 6-28)",
+Other Table Entries,,,,
+"130+2*TL
+131+2*TL","7-0,
+7-0",Application code TL ,"Definition of last application
+supported (See Table 6-28)",
+255,,,,EF11

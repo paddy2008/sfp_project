@@ -1,0 +1,26 @@
+通过CP2112+陪测板升级模块说明。
+1. 模块内bootloader已提前烧入。可以通过仿真器或者烧录器。
+   bootloader文件为tools/EFM8LB1_SMB0_Bootloader.hex
+2. 执行陪测板升级命令，使模块进入bootloader下:
+   upgd
+   此命令实际执行的I2C命令如下：
+   opw 0xa0 0x7f 0x4
+   opw 0xa0 0xdb 0x9 
+3. windows工具tools/Hex2boot.exe是将模块image从.hex格式.efm8格式
+	例如：hex2boot.exe input_file.hex -o Filename.efm8
+4. 通过tools/Exe8load.exe 将.efm8格式的模块image下载到模块。
+	例如：efm8load.exe –psmb   Filename.efm8
+
+注意，CP2112连接到陪测板上I2C master接口，通过陪测板I2C master下载image.
+
+下载的官方文档参见doc/AN945_MCU_factory_bootloader.pdf
+
+
+Example:
+
+Z:\EFM8LB12E64-SFP_head\Keil 8051 v9.53 - Debug>hex2boot "EFM8LB12E64-SFP - new.hex" -o qsfp_aoc_macom17.efm8
+
+Z:\EFM8LB12E64-SFP_head\Keil 8051 v9.53 - Debug>efm8load -psmb qsfp_aoc_macom17.efm8
+Download over port: SMB:CP2112
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

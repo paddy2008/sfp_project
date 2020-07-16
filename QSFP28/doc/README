@@ -1,0 +1,25 @@
+Add the following MACRO to Excel 2010 
+
+And assign "Ctrl + d" as shortcut key to generate CVS files.
+
+####################################################
+Sub save_to_csv()
+'
+' save_to_csv ºê
+'
+' ¿ì½Ý¼ü: Ctrl+d
+'
+    Application.ActiveProtectedViewWindow.Edit
+    Dim sheet As Worksheet
+    Dim csv_dir As String
+    Application.DisplayAlerts = False
+    csv_dir = ActiveWorkbook.Path + "\CSV\"
+    If Dir(csv_dir, vbDirectory) = "" Then
+        MkDir csv_dir
+    End If
+    
+    For Each sheet In ActiveWorkbook.Worksheets
+        csv_name = csv_dir + sheet.Name
+        sheet.SaveAs Filename:=csv_name, FileFormat:=xlCSV, CreateBackup:=True
+    Next sheet
+End Sub

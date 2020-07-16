@@ -1,0 +1,260 @@
+Byte Addr,bit,name,description,default(hex),get API,set API,User Read/Write,Manu Read/Write,Saved,Flash Addr,is effect immediately,is load to ram when startup,Interface Ready,Function Completed
+0,,identifier,11h表示QSFP28,11,,,R,R/W,YES,EE00,NO,NO,YES,YES
+1,,revision ,07h表示8636 rev2.7,7,,,R,R/W,YES,EE01,NO,NO,YES,YES
+2,7-3,reserved,,,,,,,,EE02,,,,
+,2,flat_mem,0表示paging（1表示只有page0可用）,0,,,R,R/W,YES,,NO,NO,YES,YES
+,1,intl,显示intl中断 Pin的状态,,get_interrupt();,,R,R,NO,,NO,NO,YES,YES
+,0,data-not-ready,显示模块数据和monitor状态未准备好。上电后保持高电平直到所有monitor状态正常工作,,,,R,R,NO,,NO,NO,YES,YES
+3,7,L-TX4 LOS,"4个TX通道的LOS标志位，状态位锁定直到被fixed side读取操作或者ResetL Pin复位（可选）,正常工作时状态为0",0,get_tx_los_stats(channel);,,R,R,NO,,NO,NO,YES,YES
+,6,L-TX3 LOS,,,,,,,,,,,,
+,5,L-TX2 LOS,,,,,,,,,,,,
+,4,L-TX1 LOS,,,,,,,,,,,,
+,3,L-RX4 LOS,"4个RX通道的LOS标志位，状态位锁定直到被读取操作清除或者ResetL Pin复位,正常工作时状态为0",,get_rx_los_stats(channel);,,R,R,NO,,NO,NO,YES,YES
+,2,L-RX3 LOS,,,,,,,,,,,,
+,1,L-RX2 LOS,,,,,,,,,,,,
+,0,L-RX1 LOS,,,,,,,,,,,,
+4,7,L-TX4 adapt EQ Fault,4个TX通道的adapt EQ Fault标志位,0,get_tx_adapt_eq_fault(channel);,,R,R,NO,,NO,NO,YES,YES
+,6,L-TX3 adapt EQ Fault,,,,,,,,,,,,
+,5,L-TX2 adapt EQ Fault,,,,,,,,,,,,
+,4,L-TX1 adapt EQ Fault,,,,,,,,,,,,
+,3,L-TX4 Fault,"4个TX通道的Fault标志位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",,get_tx_fault(channel);,,R,R,NO,,NO,NO,YES,YES
+,2,L-TX3 Fault,,,,,,,,,,,,
+,1,L-TX2 Fault,,,,,,,,,,,,
+,0,L-TX1 Fault,,,,,,,,,,,,
+5,7,L-TX4 LOL,"4个TX通道的LOL标志位，状态位锁定直到被fixed side读取操作或者ResetL Pin复位（可选）,正常工作时状态为0",0,get_tx_lol(channel);,,R,R,NO,,NO,NO,YES,YES
+,6,L-TX3 LOL,,,,,,,,,,,,
+,5,L-TX2 LOL,,,,,,,,,,,,
+,4,L-TX1 LOL,,,,,,,,,,,,
+,3,L-RX4 LOL,"4个RX通道的LOL标志位，状态位锁定直到被读取操作清除或者ResetL Pin复位,正常工作时状态为0",,get_rx_lol(channel);,,R,R,NO,,NO,NO,YES,YES
+,2,L-RX3 LOL,,,,,,,,,,,,
+,1,L-RX2 LOL,,,,,,,,,,,,
+,0,L-RX1 LOL,,,,,,,,,,,,
+6,7,L-Temp High Alarm,"温度报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",0,,,R,R,NO,,NO,NO,YES,YES
+,6,L-Temp low Alarm,,,,,,,,,,,,
+,5,L-Temp High warning,,,,,,,,,,,,
+,4,L-Temp low warning,,,,,,,,,,,,
+,3-0,reserved,,,,,,,,,,,,
+7,7,L-Vcc High Alarm,"电压报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",0,,,R,R,NO,,NO,NO,YES,YES
+,6,L-Vcc low Alarm,,,,,,,,,,,,
+,5,L-Vcc High warning,,,,,,,,,,,,
+,4,L-Vcc low warning,,,,,,,,,,,,
+,3-0,reserved,,,,,,,,,,,,
+8,,reserved,,0,,,,,,,,,,
+9,7,L-RX1 power High Alarm,"通道1RX功率报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",0,,,R,R,NO,,NO,NO,YES,YES
+,6,L-RX1 power low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,5,L-RX1 power High warning,,,,,,,NO,,NO,NO,YES,YES
+,4,L-RX1 power low warning,,,,,,,NO,,NO,NO,YES,YES
+,3,L-RX2 power High Alarm,"通道2RX功率报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",,,,R,R,NO,,NO,NO,YES,YES
+,2,L-RX2 power low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,1,L-RX2 power High warning,,,,,,,NO,,NO,NO,YES,YES
+,0,L-RX2 power low warning,,,,,,,NO,,NO,NO,YES,YES
+10,7,L-RX3 power High Alarm,"通道3RX功率报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",0,,,R,R,NO,,NO,NO,YES,YES
+,6,L-RX3 power low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,5,L-RX3 power High warning,,,,,,,NO,,NO,NO,YES,YES
+,4,L-RX3 power low warning,,,,,,,NO,,NO,NO,YES,YES
+,3,L-RX4 power High Alarm,"通道4RX功率报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",,,,R,R,NO,,NO,NO,YES,YES
+,2,L-RX4 power low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,1,L-RX4 power High warning,,,,,,,NO,,NO,NO,YES,YES
+,0,L-RX4 power low warning,,,,,,,NO,,NO,NO,YES,YES
+11,7,L-TX1 bias High Alarm,"通道1bias电流报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",0,,,R,R,NO,,NO,NO,YES,YES
+,6,L-TX1 bias low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,5,L-TX1 bias High warning,,,,,,,NO,,NO,NO,YES,YES
+,4,L-TX1 bias low warning,,,,,,,NO,,NO,NO,YES,YES
+,3,L-TX2 bias High Alarm,"通道2bias电流报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",,,,R,R,NO,,NO,NO,YES,YES
+,2,L-TX2 bias low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,1,L-TX2 bias High warning,,,,,,,NO,,NO,NO,YES,YES
+,0,L-TX2 bias low warning,,,,,,,NO,,NO,NO,YES,YES
+12,7,L-TX3 bias High Alarm,"通道3bias电流报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",0,,,R,R,NO,,NO,NO,YES,YES
+,6,L-TX3 bias low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,5,L-TX3 bias High warning,,,,,,,NO,,NO,NO,YES,YES
+,4,L-TX3 bias low warning,,,,,,,NO,,NO,NO,YES,YES
+,3,L-TX4 bias High Alarm,"通道4bias电流报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",,,,R,R,NO,,NO,NO,YES,YES
+,2,L-TX4 bias low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,1,L-TX4 bias High warning,,,,,,,NO,,NO,NO,YES,YES
+,0,L-TX4 bias low warning,,,,,,,NO,,NO,NO,YES,YES
+13,7,L-TX1 power High Alarm,"通道1TX功率报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",0,,,R,R,NO,,NO,NO,YES,YES
+,6,L-TX1 power low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,5,L-TX1 power High warning,,,,,,,NO,,NO,NO,YES,YES
+,4,L-TX1 power low warning,,,,,,,NO,,NO,NO,YES,YES
+,3,L-TX2 power High Alarm,"通道2TX功率报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",,,,R,R,NO,,NO,NO,YES,YES
+,2,L-TX2 power low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,1,L-TX2 power High warning,,,,,,,NO,,NO,NO,YES,YES
+,0,L-TX2 power low warning,,,,,,,NO,,NO,NO,YES,YES
+14,7,L-TX3 power High Alarm,"通道3TX功率报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",0,,,R,R,NO,,NO,NO,YES,YES
+,6,L-TX3 power low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,5,L-TX3 power High warning,,,,,,,NO,,NO,NO,YES,YES
+,4,L-TX3 power low warning,,,,,,,NO,,NO,NO,YES,YES
+,3,L-TX4 power High Alarm,"通道4TX功率报警和警告位，状态位锁定直到被读取操作清除或者ResetL Pin复位（可选）,正常工作时状态为0",,,,R,R,NO,,NO,NO,YES,YES
+,2,L-TX4 power low Alarm,,,,,,,NO,,NO,NO,YES,YES
+,1,L-TX4 power High warning,,,,,,,NO,,NO,NO,YES,YES
+,0,L-TX4 power low warning,,,,,,,NO,,NO,NO,YES,YES
+15,,reserved,,0,,,,,,,,,,
+16,,,,0,,,,,,,,,,
+17,,,,0,,,,,,,,,,
+18,,,,0,,,,,,,,,,
+19,,,,0,,,,,,,,,,
+20,,,,0,,,,,,,,,,
+21,,,,0,,,,,,,,,,
+22,,temp MSB,"有符号，每个字节表示1/256C,所以表达范围为-128C--+128C",0,get_temp();,,R,R,NO,,NO,NO,YES,YES
+23,,temp LSB,,0,,,,,NO,,NO,NO,YES,YES
+24,,reserved,,0,,,,,,,,,,YES
+25,,reserved,,0,,,,,,,,,,YES
+26,,Vol MSB,"无符号，每个字节表示100uV,所以表达范围为0-6.55V",0,get_vcc();,,R,R,NO,,NO,NO,YES,YES
+27,,Vol LSB,,0,,,,,NO,,NO,NO,YES,YES
+28,,reserved,,0,,,,,,,,,,
+29,,reserved,,0,,,,,,,,,,
+30,,reserved,,0,,,,,,,,,,
+31,,reserved,,0,,,,,,,,,,
+32,,reserved,,0,,,,,,,,,,
+33,,reserved,,0,,,,,,,,,,
+34,,RX1 Power MSB,无符号，每个字节表示0.1uW，表达范围0-6.55mW，-40--8.2dbm，平均功率或OMA可选-bype220bit3，最低精度3dBm,0,get_rx_power(channel);,,R,R,NO,,NO,NO,YES,YES
+35,,RX1 Power LSB,,0,,,,,,,,,,
+36,,RX2 Power MSB,,0,,,,,,,,,,
+37,,RX2 Power LSB,,0,,,,,,,,,,
+38,,RX3 Power MSB,,0,,,,,,,,,,
+39,,RX3 Power LSB,,0,,,,,,,,,,
+40,,RX4 Power MSB,,0,,,,,,,,,,
+41,,RX4 Power LSB,,0,,,,,,,,,,
+42,,TX1 Bias MSB,"无符号，每个字节表示2uA，表达范围0-131mA,最低精度10%",0,get_tx_bias(channel);,,R,R,NO,,NO,NO,YES,NO
+43,,TX1 Bias LSB,,0,,,,,,,,,,
+44,,TX2 Bias MSB,,0,,,,,,,,,,
+45,,TX2 Bias LSB,,0,,,,,,,,,,
+46,,TX3 Bias MSB,,0,,,,,,,,,,
+47,,TX3 Bias LSB,,0,,,,,,,,,,
+48,,TX4 Bias MSB,,0,,,,,,,,,,
+49,,TX4 Bias LSB,,0,,,,,,,,,,
+50,,TX1 Power MSB,无符号，每个字节表示0.1uW，表达范围0-6.55mW，-40--8.2dbm，平均功率，最低精度3dBm,0,get_tx_power(channel);,,R,R,NO,,NO,NO,YES,YES
+51,,TX1 Power LSB,,0,,,,,,,NO,NO,YES,YES
+52,,TX2 Power MSB,,0,,,,,,,NO,NO,YES,YES
+53,,TX2 Power LSB,,0,,,,,,,NO,NO,YES,YES
+54,,TX3 Power MSB,,0,,,,,,,NO,NO,YES,YES
+55,,TX3 Power LSB,,0,,,,,,,NO,NO,YES,YES
+56,,TX4 Power MSB,,0,,,,,,,NO,NO,YES,YES
+57,,TX4 Power LSB,,0,,,,,,,NO,NO,YES,YES
+58,,reserved,,0,,,,,,,,,,
+59,,,,0,,,,,,,,,,
+60,,,,0,,,,,,,,,,
+61,,,,0,,,,,,,,,,
+62,,,,0,,,,,,,,,,
+63,,,,0,,,,,,,,,,
+64,,,,0,,,,,,,,,,
+65,,,,0,,,,,,,,,,
+66,,,,0,,,,,,,,,,
+67,,,,0,,,,,,,,,,
+68,,,,0,,,,,,,,,,
+69,,,,0,,,,,,,,,,
+70,,,,0,,,,,,,,,,
+71,,,,0,,,,,,,,,,
+72,,,,0,,,,,,,,,,
+73,,,,0,,,,,,,,,,
+74,,,,0,,,,,,,,,,
+75,,,,0,,,,,,,,,,
+76,,,,0,,,,,,,,,,
+77,,,,0,,,,,,,,,,
+78,,,,0,,,,,,,,,,
+79,,,,0,,,,,,,,,,
+80,,,,0,,,,,,,,,,
+81,,,,0,,,,,,,,,,
+82,,,,0,,,,,,,,,,
+83,,,,0,,,,,,,,,,
+84,,,,0,,,,,,,,,,
+85,,,,0,,,,,,,,,,
+86,7-4,reserved,,0,,,,,,,,,,
+,3,TX4_disable,写1关闭TX4,,get_tx_disable(channel);,"set_tx_disable(channel, value);",RW,RW,NO,,YES,NO,YES,YES
+,2,TX3_disable,写1关闭TX3,,,,,,NO,,YES,NO,YES,
+,1,TX2_disable,写1关闭TX2,,,,,,NO,,YES,NO,YES,
+,0,TX1_disable,写1关闭TX1,,,,,,NO,,YES,NO,YES,
+87,7-0,RX_rate_select,RX速率选择，不支持速率选择,0,,,RW,RW,NO,,NO,NO,NO,NO
+88,7-0,TX_rate_select,TX速率选择，不支持速率选择,0,,,RW,RW,NO,,NO,NO,NO,NO
+89,,RX4_application_sel,四个RX通道应用选择，参考SFF-8079,0,,,RW,RW,NO,,NO,NO,NO,NO
+90,,RX3_application_sel,,0,,,,,NO,,NO,NO,NO,
+91,,RX2_application_sel,,0,,,,,NO,,NO,NO,NO,
+92,,RX1_application_sel,,0,,,,,NO,,NO,NO,NO,
+93,7-3,reserved,,,,,,,YES,EE03,,,,
+,2,hign power class enable,设为1，支持功耗大于等于3.5W,,get_high_power_class(),set_high_power_class_enable(value);,RW,RW,,,YES,NO,YES,NO
+,1,power_set,默认为0，设置为1则运行在低功耗模式,,get_low_power_mode();,set_low_power_mode(true/false);,RW,RW,,,YES,NO,YES,NO
+,0,power_over-ride,忽视低功耗模式的设置，设置为1则忽略低功耗模式,,,,RW,RW,,,YES,NO,YES,YES
+94,,TX4_application_sel,四个TX通道应用选择，参考SFF-8079,0,,,RW,RW,NO,,NO,NO,NO,NO
+95,,TX3_application_sel,,0,,,,,,,,,,
+96,,TX2_application_sel,,0,,,,,,,,,,
+97,,TX1_application_sel,,0,,,,,,,,,,
+98,7,TX4-CDR-control,"1表示CDR on,0表示off",FF,get_tx_cdr_contorl(channel);,"set_tx_cdr_control(channel, value);",RW,RW,NO,,YES,NO,YES,NO
+,6,TX3-CDR-control,,,,,,,,,,,,
+,5,TX2-CDR-control,,,,,,,,,,,,
+,4,TX1-CDR-control,,,,,,,,,,,,
+,3,RX4-CDR-control,,,get_rx_cdr_contorl(channel);,"set_rx_cdr_control(channel, value);",RW,RW,NO,,YES,NO,YES,NO
+,2,RX3-CDR-control,,,,,,,,,,,,
+,1,RX2-CDR-control,,,,,,,,,,,,
+,0,RX1-CDR-control,,,,,,,,,,,,
+99,,reserved,,0,,,,,,,,NO,,
+100,7,,4个tx los的masking bit,0,,,,,NO,,YES,NO,YES,
+,6,,,,,,,,NO,,YES,NO,YES,
+,5,,,,,,,,NO,,YES,NO,YES,
+,4,,,,,,,,NO,,YES,NO,YES,
+,3,,4个rx los的masking bit,,,,,,NO,,YES,NO,YES,
+,2,,,,,,,,NO,,YES,NO,YES,
+,1,,,,,,,,NO,,YES,NO,YES,
+,0,,,,,,,,NO,,YES,NO,YES,
+101,7,,4个tx adapt EQ fault mask,0,,,,,NO,,YES,NO,YES,
+,6,,,,,,,,NO,,YES,NO,YES,
+,5,,,,,,,,NO,,YES,NO,YES,
+,4,,,,,,,,NO,,YES,NO,YES,
+,3,,4个tx fault mask,,,,,,NO,,YES,NO,YES,
+,2,,,,,,,,NO,,YES,NO,YES,
+,1,,,,,,,,NO,,YES,NO,YES,
+,0,,,,,,,,NO,,YES,NO,YES,
+102,7,,4个tx CDR LOL mask,0,,,,,NO,,YES,NO,YES,
+,6,,,,,,,,NO,,YES,NO,YES,
+,5,,,,,,,,NO,,YES,NO,YES,
+,4,,,,,,,,NO,,YES,NO,YES,
+,3,,4个rx CDR LOL mask,,,,,,NO,,YES,NO,YES,
+,2,,,,,,,,NO,,YES,NO,YES,
+,1,,,,,,,,NO,,YES,NO,YES,
+,0,,,,,,,,NO,,YES,NO,YES,
+103,7,,高低温alarm和warning的masking bit,0,,,,,NO,,YES,NO,YES,
+,6,,,,,,,,NO,,YES,NO,YES,
+,5,,,,,,,,NO,,YES,NO,YES,
+,4,,,,,,,,NO,,YES,NO,YES,
+,3-0,,,,,,,,NO,,YES,NO,YES,
+104,7,,high&low VCC alarm和warning的masking bit,0,,,,,NO,,YES,NO,YES,
+,6,,,,,,,,NO,,YES,NO,YES,
+,5,,,,,,,,NO,,YES,NO,YES,
+,4,,,,,,,,NO,,YES,NO,YES,
+,3-0,,,,,,,,,,,,,
+105,,reserved,,0,,,,,,,,,,
+106,,,,0,,,,,,,,,,
+107,,,,0,,,,,,,,,,
+108,,propagation delay,0000h，表示无延迟,0,,,RW,RW,YES,EE04,NO,NO,NO,NO
+109,,,,0,,,,,YES,EE05,NO,NO,,
+110,7,advanced low power,"0000,表示低于1.5w, 不支持",0,,,RW,RW,YES,EE06,NO,NO,NO,NO
+,6,,,,,,,,,,NO,NO,,
+,5,,,,,,,,,,NO,NO,,
+,4,,,,,,,,,,NO,NO,,
+,3,far side manegement,0，不支持,,,,RW,RW,,,NO,NO,NO,NO
+,2,vcc expend,不支持3.3V以下电压,,,,RW,RW,,,NO,NO,NO,NO
+,1,,,,,,,,,,NO,NO,,
+,0,,,,,,,,,,NO,NO,,
+111,,use for PCI,0,0,,,RW,RW,YES,EE07,NO,NO,NO,NO
+112,,,0,0,,,,,YES,EE08,NO,NO,,
+113,7,reserved,,0,,,,,YES,EE09,,,,
+,6,far end,000：unspecified,,,,RW,RW,,,NO,NO,NO,NO
+,5,,,,,,,,,,NO,NO,,
+,4,,,,,,,,,,NO,NO,,
+,3,near end,0000:4通道implement,,,,RW,RW,,,NO,NO,NO,NO
+,2,,,,,,,,,,NO,NO,,
+,1,,,,,,,,,,NO,NO,,
+,0,,,,,,,,,,NO,NO,,
+114,,reserved,,0,,,,,,,,,,
+115,,,,0,,,,,,,,,,
+116,,,,0,,,,,,,,,,
+117,,,,0,,,,,,,,,,
+118,,,,0,,,,,,,,,,
+119,,password change entry area,,,,,RW,RW,YES,EE0A,NO,NO,NO,NO
+120,,,,,,,,,YES,EE0B,NO,NO,,
+121,,,,,,,,,YES,EE0C,NO,NO,,
+122,,,,,,,,,YES,EE0D,NO,NO,,
+123,,password entry area,,,,,RW,RW,YES,EE0E,NO,NO,NO,NO
+124,,,,,,,,,YES,EE0F,NO,NO,,
+125,,,,,,,,,YES,EE10,NO,NO,,
+126,,,,,,,,,YES,EE11,NO,NO,,
+127,,page_select,,0,,,RW,RW,NO,,YES,NO,YES,YES

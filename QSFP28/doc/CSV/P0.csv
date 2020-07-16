@@ -1,0 +1,150 @@
+Byte Addr,bit,register name,comment,default(hex),value (dec),initial API,User Read/Write,Manu Read/Write,Saved,Flash Addr,is load to ram when startup,Interface Ready,Function Completed
+128,,identifier,QSFP28,11,,,R,RW,YES,EE12,NO,YES,YES
+129,7,,Power Class 1-4,ce,,set_power_class(uint8_t value),R,RW,YES,EE13,YES,YES,NO
+,6,,,,,,,,,,,,
+,5,,Reserved,,,,,,,,,,
+,4,,"0: No CLEI code present in Page 02h
+1: CLEI code present in Page 02h",,,,R,RW,,,YES,YES,NO
+,3,,"0: No CDR in TX , 1: CDR present in TX",,,,R,RW,,,YES,YES,NO
+,2,,"0: No CDR in RX , 1: CDR present in RX",,,,R,RW,,,YES,YES,NO
+,1,,Power Class 5-7,,,,R,RW,,,YES,YES,NO
+,0,,,,,,,,,,,,
+130,,Connector,LC,7,,,R,RW,YES,EE14,NO,NO,NO
+131,,transceiver,100GBASE0-LR4,80,,set_eth_compliance_codes(uint8_t value),R,RW,YES,EE15,YES,YES,NO
+132,,,不支持SONET,0,,set_sonet_compliance_codes,R,RW,YES,EE16,NO,NO,NO
+133,,,,0,,,,,YES,EE17,NO,NO,NO
+134,,,不支持,0,,,R,RW,YES,EE18,NO,NO,NO
+135,,,long distance；,0,,,R,RW,YES,EE19,NO,NO,NO
+136,,,不支持,0,,,R,RW,YES,EE1A,NO,NO,NO
+137,,,单模传输,0,,set_fiber_channel_tx_media(uint8_t value),R,RW,YES,EE1B,YES,YES,NO
+138,,,不支持,0,,,R,RW,YES,EE1C,NO,NO,NO
+139,,encoding ???,NRZ,3,,,R,RW,YES,EE1D,NO,NO,NO
+140,,BR NOrminal,大于25.5G,FF,,set_norminal_bit_rate(value),R,RW,YES,EE1E,YES,YES,NO
+141,,ext ratesel,无速率选择,0,,,R,RW,YES,EE1F,NO,NO,NO
+142,,length(SMF),10km,a,,,R,RW,YES,EE20,YES,YES,NO
+143,,length(OM3),不支持,0,,,R,RW,YES,EE21,NO,NO,NO
+144,,length(OM2),不支持,0,,,R,RW,YES,EE22,NO,NO,NO
+145,,length(OM1),不支持,0,,,R,RW,YES,EE23,NO,NO,NO
+146,,length(copper),不支持,0,,,R,RW,YES,EE24,NO,NO,NO
+147,7-4,Transmitter technology,1310DFB,44,,set_device_technology(uint8_t value),R,RW,YES,EE25,YES,YES,NO
+,3,"0: No wavelength control
+1: Active wavelength control",无波长控制,,,set_wavelength_control(uint8_t value),R,RW,,,YES,YES,NO
+,2,"0: Uncooled transmitter device
+1: Cooled transmitter",带TEC,,,set_cool_tx_dev(uint8_t value),R,RW,,,YES,YES,NO
+,1,"0: Pin detector
+1: APD detector",PIN；,,,set_detector_type(uint8_t value),R,RW,,,YES,YES,NO
+,0,"0: Transmitter not tunable
+1: Transmitter tunable",不可调,,,set_tx_tunable(uint8_t value),R,RW,,,YES,YES,NO
+148,,vender name,,,,,R,RW,YES,EE26,NO,YES,YES
+149,,,,,,,,,YES,EE27,,,
+150,,,,,,,,,YES,EE28,,,
+151,,,,,,,,,YES,EE29,,,
+152,,,,,,,,,YES,EE2A,,,
+153,,,,,,,,,YES,EE2B,,,
+154,,,,,,,,,YES,EE2C,,,
+155,,,,,,,,,YES,EE2D,,,
+156,,,,,,,,,YES,EE2E,,,
+157,,,,,,,,,YES,EE2F,,,
+158,,,,,,,,,YES,EE30,,,
+159,,,,,,,,,YES,EE31,,,
+160,,,,,,,,,YES,EE32,,,
+161,,,,,,,,,YES,EE33,,,
+162,,,,,,,,,YES,EE34,,,
+163,,,,,,,,,YES,EE35,,,
+164,7-5,Reserverd,,0,,,,,YES,EE36,,,
+,4,EDR,ext transceiver codes不支持,,,set_ext_module_code(uint8_t value),R,RW,,,YES,NO,NO
+,3,FDR,,,,,,,,,,,
+,2,QDR,,,,,,,,,,,
+,1,DDR,,,,,,,,,,,
+,0,SDR,,,,,,,,,,,
+165,,Vender OUI,无,0,,,R,RW,YES,EE37,NO,YES,YES
+166,,,,0,,,,,YES,EE38,,,
+167,,,,0,,,,,YES,EE39,,,
+168,,vender PN,,,,,R,RW,YES,EE3A,NO,YES,YES
+169,,,,,,,R,,YES,EE3B,,,
+170,,,,,,,R,,YES,EE3C,,,
+171,,,,,,,R,,YES,EE3D,,,
+172,,,,,,,R,,YES,EE3E,,,
+173,,,,,,,R,,YES,EE3F,,,
+174,,,,,,,R,,YES,EE40,,,
+175,,,,,,,R,,YES,EE41,,,
+176,,,,,,,R,,YES,EE42,,,
+177,,,,,,,R,,YES,EE43,,,
+178,,,,,,,R,,YES,EE44,,,
+179,,,,,,,R,,YES,EE45,,,
+180,,,,,,,R,,YES,EE46,,,
+181,,,,,,,R,,YES,EE47,,,
+182,,,,,,,R,,YES,EE48,,,
+183,,,,,,,R,,YES,EE49,,,
+184,,vendor rev,01（ASCII）,30,,,R,RW,YES,EE4A,NO,YES,YES
+185,,,,31,,,,,,EE4B,,,
+186,,wavelength,1310nm(unit of 0.05nm),66,,set_wavelen_atten(uint16_t value),R,RW,YES,EE4C,YES,YES,NO
+187,,,,58,,,,,,EE4D,,,
+188,,wavelength tolerance,1.05nm,0,,set_wavelen_tolerance(value);,R,RW,YES,EE4E,YES,YES,NO
+189,,,,D1,,,,,,EE4F,,,
+190,,max case temp,70C,0,,,R,RW,YES,EE50,YES,YES,YES
+191,,cc_base,checksum,,,,R,R,YES,EE51,NO,YES,YES
+192,,options,100G LR4,3,,,R,RW,YES,EE52,NO,NO,NO
+193,,,,7,,,R,RW,YES,EE53,YES,YES,NO
+194,,,,FF,,,R,RW,YES,EE54,YES,YES,NO
+195,,,,9e,,,R,RW,YES,EE55,NO,YES,NO
+196,,VENDER SN,,,,,R,RW,YES,EE56,NO,YES,NO
+197,,,,,,,,,YES,EE57,,,
+198,,,,,,,,,YES,EE58,,,
+199,,,,,,,,,YES,EE59,,,
+200,,,,,,,,,YES,EE5A,,,
+201,,,,,,,,,YES,EE5B,,,
+202,,,,,,,,,YES,EE5C,,,
+203,,,,,,,,,YES,EE5D,,,
+204,,,,,,,,,YES,EE5E,,,
+205,,,,,,,,,YES,EE5F,,,
+206,,,,,,,,,YES,EE60,,,
+207,,,,,,,,,YES,EE61,,,
+208,,,,,,,,,YES,EE62,,,
+209,,,,,,,,,YES,EE63,,,
+210,,,,,,,,,YES,EE64,,,
+211,,,,,,,,,YES,EE65,,,
+212,,Date code,1,31,,,R,RW,YES,EE66,NO,YES,NO
+213,,,5,35,,,,,YES,EE67,,,
+214,,,0,30,,,,,YES,EE68,,,
+215,,,8,38,,,,,YES,EE69,,,
+216,,,1,31,,,,,YES,EE6A,,,
+217,,,9,39,,,,,YES,EE6B,,,
+218,,,,20,,,,,YES,EE6C,,,
+219,,,,20,,,,,YES,EE6D,,,
+220,,DM type,ave power;power measurement,0c,,,R,RW,YES,EE6E,NO,YES,NO
+221,,enhanced options,,0,,,R,RW,YES,EE6F,NO,NO,NO
+222,,extend bit rate,25.78125G/250M,67,,set_norminal_bit_rate(value),R,RW,YES,EE70,YES,YES,NO
+223,,check sum,,,,,R,R,YES,EE71,NO,YES,YES
+224,,vender specific,,,,,R,RW,YES,EE72,NO,YES,YES
+225,,,,,,,R,RW,YES,EE73,NO,,
+226,,,,,,,R,RW,YES,EE74,NO,,
+227,,,,,,,R,RW,YES,EE75,NO,,
+228,,,,,,,R,RW,YES,EE76,NO,,
+229,,,,,,,R,RW,YES,EE77,NO,,
+230,,,,,,,R,RW,YES,EE78,NO,,
+231,,,,,,,R,RW,YES,EE79,NO,,
+232,,,,,,,R,RW,YES,EE7A,NO,,
+233,,,,,,,R,RW,YES,EE7B,NO,,
+234,,,,,,,R,RW,YES,EE7C,NO,,
+235,,,,,,,R,RW,YES,EE7D,NO,,
+236,,,,,,,R,RW,YES,EE7E,NO,,
+237,,,,,,,R,RW,YES,EE7F,NO,,
+238,,,,,,,R,RW,YES,EE80,NO,,
+239,,,,,,,R,RW,YES,EE81,NO,,
+240,,,,,,,R,RW,YES,EE82,NO,,
+241,,,,,,,R,RW,YES,EE83,NO,,
+242,,,,,,,R,RW,YES,EE84,NO,,
+243,,,,,,,R,RW,YES,EE85,NO,,
+244,,,,,,,R,RW,YES,EE86,NO,,
+245,,,,,,,R,RW,YES,EE87,NO,,
+246,,,,,,,R,RW,YES,EE88,NO,,
+247,,,,,,,R,RW,YES,EE89,NO,,
+248,,,,,,,R,RW,YES,EE8A,NO,,
+249,,,,,,,R,RW,YES,EE8B,NO,,
+250,,,,,,,R,RW,YES,EE8C,NO,,
+251,,,,,,,R,RW,YES,EE8D,NO,,
+252,,,,,,,R,RW,YES,EE8E,NO,,
+253,,,,,,,R,RW,YES,EE8F,NO,,
+254,,,,,,,R,RW,YES,EE90,NO,,
+255,,,,,,,R,RW,YES,EE91,NO,,

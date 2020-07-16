@@ -1,0 +1,152 @@
+,Common MCU Registers to Host I2C Addr,,,,,,,,
+,Host I2C addr,Register Page,Register addr,Read/Write,Save Where,Saved,Description,,
+128,80,NA,NA,R,RAM,NO,cur_Temp[MSB],,
+129,81,NA,NA,R,RAM,NO,cur_Temp[LSB],,
+130,82,NA,NA,R,RAM,NO,cur_Vcc[MSB],,
+131,83,NA,NA,R,RAM,NO,cur_Vcc[LSB],,
+132,84,NA,NA,R,RAM,NO,cur_iBias[ch0][MSB],,
+133,85,NA,NA,R,RAM,NO,cur_iBias[ch0][LSB],,
+134,86,NA,NA,R,RAM,NO,cur_rssi[ch0][MSB],,
+135,87,NA,NA,R,RAM,NO,cur_rssi[ch0][LSB],,
+136,88,NA,NA,R,RAM,NO,cur_txmon[ch0][MSB],,
+137,89,NA,NA,R,RAM,NO,cur_txmon[ch0][LSB],,
+138,8A,NA,NA,R,RAM,NO,cur_Bias[ch0][MSB],,
+139,8B,NA,NA,R,RAM,NO,cur_Bias[ch0][LSB],,
+140,8C,NA,NA,R,RAM,NO,cur_Modulation[ch0][MSB],,
+141,8D,NA,NA,R,RAM,NO,cur_Modulation[ch0][LSB],,
+142,8E,NA,NA,R,RAM,NO,cur_Crossing[ch0][MSB],,
+143,8F,NA,NA,R,RAM,NO,cur_Crossing[ch0][LSB],,
+144,90,NA,NA,R,RAM,NO,cur_iBias[ch1][MSB],,
+145,91,NA,NA,R,RAM,NO,cur_iBias[ch1][LSB],,
+146,92,NA,NA,R,RAM,NO,cur_rssi[ch1][MSB],,
+147,93,NA,NA,R,RAM,NO,cur_rssi[ch1][LSB],,
+148,94,NA,NA,R,RAM,NO,cur_txmon[ch1][MSB],,
+149,95,NA,NA,R,RAM,NO,cur_txmon[ch1][LSB],,
+150,96,NA,NA,R,RAM,NO,cur_Bias[ch1][MSB],,
+151,97,NA,NA,R,RAM,NO,cur_Bias[ch1][LSB],,
+152,98,NA,NA,R,RAM,NO,cur_Modulation[ch1][MSB],,
+153,99,NA,NA,R,RAM,NO,cur_Modulation[ch1][LSB],,
+154,9A,NA,NA,R,RAM,NO,cur_Crossing[ch1][MSB],,
+155,9B,NA,NA,R,RAM,NO,cur_Crossing[ch1][LSB],,
+156,9C,NA,NA,R,RAM,NO,cur_iBias[ch2][MSB],,
+157,9D,NA,NA,R,RAM,NO,cur_iBias[ch2][LSB],,
+158,9E,NA,NA,R,RAM,NO,cur_rssi[ch2][MSB],,
+159,9F,NA,NA,R,RAM,NO,cur_rssi[ch2][LSB],,
+160,A0,NA,NA,R,RAM,NO,cur_txmon[ch2][MSB],,
+161,A1,NA,NA,R,RAM,NO,cur_txmon[ch2][LSB],,
+162,A2,NA,NA,R,RAM,NO,cur_Bias[ch2][MSB],,
+163,A3,NA,NA,R,RAM,NO,cur_Bias[ch2][LSB],,
+164,A4,NA,NA,R,RAM,NO,cur_Modulation[ch2][MSB],,
+165,A5,NA,NA,R,RAM,NO,cur_Modulation[ch2][LSB],,
+166,A6,NA,NA,R,RAM,NO,cur_Crossing[ch2][MSB],,
+167,A7,NA,NA,R,RAM,NO,cur_Crossing[ch2][LSB],,
+168,A8,NA,NA,R,RAM,NO,cur_iBias[ch3][MSB],,
+169,A9,NA,NA,R,RAM,NO,cur_iBias[ch3][LSB],,
+170,AA,NA,NA,R,RAM,NO,cur_rssi[ch3][MSB],,
+171,AB,NA,NA,R,RAM,NO,cur_rssi[ch3][LSB],,
+172,AC,NA,NA,R,RAM,NO,cur_txmon[ch3][MSB],,
+173,AD,NA,NA,R,RAM,NO,cur_txmon[ch3][LSB],,
+174,AE,NA,NA,R,RAM,NO,cur_Bias[ch3][MSB],,
+175,AF,NA,NA,R,RAM,NO,cur_Bias[ch3][LSB],,
+176,B0,NA,NA,R,RAM,NO,cur_Modulation[ch3][MSB],,
+177,B1,NA,NA,R,RAM,NO,cur_Modulation[ch3][LSB],,
+178,B2,NA,NA,R,RAM,NO,cur_Crossing[ch3][MSB],,
+179,B3,NA,NA,R,RAM,NO,cur_Crossing[ch3][LSB],,
+180,B4,NA,NA,R,RAM,NO,"PIN status:
+bit0: MOD_SEL, input
+bit1: RESET, input
+bit2: LP_MODE, input
+bit3: TX_DIS, input
+bit4: INTR, output
+bit5: Tx3v3_en, output
+bit6: TEC_EN (LR4 Only)
+bit7: TX1v8_en (LR4 Only)",,
+181,B5,NA,NA,R,RAM,NO,TEC_Temp_Readback[MSB],LR4 Only,
+182,B6,NA,NA,R,RAM,NO,TEC_Temp_Readback[LSB],,
+183,B7,NA,NA,R,RAM,NO,TEC_Temp_Set[MSB],,
+184,B8,NA,NA,R,RAM,NO,TEC_Temp_Set[LSB],,
+185,B9,NA,NA,RW,RAM,NO,ITEC[MSB],,
+186,BA,NA,NA,R,RAM,NO,ITEC[LSB],,
+187,BB,NA,NA,RW,RAM,NO,VTEC[MSB],,
+188,BC,NA,NA,RW,RAM,NO,VTEC[LSB],,
+,…,,,,,,,,
+,,,,,,,,,
+,0xDB,NA,NA,RW,RAM,NO,"dbg command:
+0x0: 执行成功
+0x1: READ
+0x2: Write
+0x4: debug log
+          Data[0]=0: disable log
+          Data[0]=1: enable log
+          Data[0]=0xC: clear log
+0x5: Start Calibration polling (auto enable)
+0x6:  Stop Calibration polling (auto disable)
+0x7:  Dry Run calibration:  
+          channel: Data[0]
+          Input Temperature: Data[2] and Data[3]. 
+          Result Bias: Data[4]/Data[5]
+          Result Mod: Data[6]/Data[7]
+          Result Cross: Data[8]/Data[9]
+0x9: jump to boot for upgrading
+0xa: Start DDMI polling
+0xb: Stop DDMI polling
+0xc: Reset
+0xd: EEPROM REG Data Initialization  (eep init)
+0xe: Save EEPROM REG Data
+          Data[0]: Dev Addr
+          Data[1]: Value
+          Data[2]: Offset[MSB]
+          Data[3]: Offset[LSB]","0xf: Save current to LUT
+          Data[0]: LUT entry type
+                    1:  Low Temp
+                    2:  Normal Temp (Room)
+                    3:  High Temp
+0x10: Console Mode
+         此命令用于连接陪测板时，打开模块串口。
+       并且使模块忽略ModSel信号，响应所有I2C命令
+0x11:TEC enable for LR4
+0x12:Laser on
+0x13:Laser off
+0x14:Factory_reset
+0x15: Start manufacture aging
+0x16: Stop manufacture aging
+0x17:Aging eep init
+0xFF: 执行失败",
+,0xDC,NA,NA,R,RAM,NO,"bit0~3: reserved
+bit4~7: R/W length",,
+,0xDD,NA,NA,RW,RAM,NO,"bit0~6: peripherals I2C base address,  ",,
+,0xDE,NA,NA,RW,RAM,NO,Offset_LB,,
+,0xDF,NA,NA,RW,RAM,NO,"bit 0 ~ 3: high 4-bit of semtch 12-bit Offset
+bit 4 ~ 7: page number for flash page read/write",,
+,0xE0,NA,NA,RW,RAM,NO,Data[0],,
+,0xE1,NA,NA,RW,RAM,NO,Data[1],,
+,0xE2,NA,NA,RW,RAM,NO,Data[2],,
+,0xE3,NA,NA,RW,RAM,NO,Data[3],,
+,0xE4,NA,NA,RW,RAM,NO,Data[4],,
+,0xE5,NA,NA,RW,RAM,NO,Data[5],,
+,0xE6,NA,NA,RW,RAM,NO,Data[6],,
+,0xE7,NA,NA,RW,RAM,NO,Data[7],,
+,0xE8,NA,NA,RW,RAM,NO,Data[8],,
+,0xE9,NA,NA,RW,RAM,NO,Data[9],,
+,0xEA,NA,NA,RW,RAM,NO,Data[10],,
+,0xEB,NA,NA,RW,RAM,NO,Data[11],,
+,0xEC,NA,NA,RW,RAM,NO,Data[12],,
+,0xED,NA,NA,RW,RAM,NO,Data[13],,
+,0xEE,NA,NA,RW,RAM,NO,Data[14],,
+,0xEF,NA,NA,RW,RAM,NO,Data[15],,
+,0xF0,,,,,,,,
+,0xF1,,,,,,DDMI polling enable(1)/disable(1),,
+,0xF2,NA,NA,W,RAM,NO,LUT polling enable(1)/disable(0),,
+,0xF3,NA,NA,R,RAM,NO,module build time--sec,,
+,0xF4,NA,NA,R,RAM,NO,module build time--min,,
+,0xF5,NA,NA,R,RAM,NO,module build time--hour,,
+,0xF6,NA,NA,R,RAM,NO,module build time--day,,
+,0xF7,NA,NA,R,RAM,NO,module build time--mon,,
+,0xF8,NA,NA,R,RAM,NO,module build time--year,,
+,0xF9,NA,NA,R,RAM,NO,module SW version[MSB],,
+,0xFA,NA,NA,R,RAM,NO,module SW version[LSB],,
+,0xFB,NA,NA,R,RAM,NO,get module boot status,,
+,0xFC,NA,NA,R,RAM,NO,get cmd excute status,,
+,0xFD,NA,NA,W,RAM,NO,write 0xFD to 0x1 to excute eep init,,
+,0xFE,NA,NA,W,RAM,NO,write 0xFE to 0x1 to excute eep load,,
+,0xFF,NA,NA,W,RAM,NO,write 0xFE to 0x1 to excute eep save,,

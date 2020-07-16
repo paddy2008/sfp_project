@@ -1,0 +1,158 @@
+Byte Addr,bit,register name,value (hex),value (hex),comment,get API,set API,User Read/Write,Manu Read/Write,Saved,µ¥Î»,is effect immediately,is load to ram when startup,Interface Ready,Function Completed
+128,,msb of high temperature alarm threshold,,4b,75C,,,R,RW,YES,1/256¶È,YES,YES,YES,YES
+129,,lsb of high temperature alarm threshold,,0,,,,R,RW,YES,,YES,YES,YES,YES
+130,,msb of low temperature alarm threshold,,fb, -5C,,,R,RW,YES,,YES,YES,YES,YES
+131,,lsb of low temperature alarm threshold,,0,,,,R,RW,YES,,YES,YES,YES,YES
+132,,msb of high temperature warning threshold,,46,70C,,,R,RW,YES,,YES,YES,YES,YES
+133,,lsb of high temperature warning threshold,,0,,,,R,RW,YES,,YES,YES,YES,YES
+134,,msb of low temperature warning threshold,,0,0C,,,R,RW,YES,,YES,YES,YES,YES
+135,,lsb of low temperature warning threshold,,0,,,,R,RW,YES,,YES,YES,YES,YES
+136,,Reserved,,0,,,,,,,,,,,
+137,,,,0,,,,,,,,,,,
+138,,,,0,,,,,,,,,,,
+139,,,,0,,,,,,,,,,,
+140,,,,0,,,,,,,,,,,
+141,,,,0,,,,,,,,,,,
+142,,,,0,,,,,,,,,,,
+143,,,,0,,,,,,,,,,,
+144,,msb of voltage supply high alarm threshold,,8d,3.63V,,,R,RW,YES,0.1mV,YES,YES,YES,YES
+145,,lsb of voltage supply high alarm threshold,,cc,,,,R,RW,YES,,YES,YES,YES,YES
+146,,msb of voltage supply low alarm threshold,,76,3.036V,,,R,RW,YES,,YES,YES,YES,YES
+147,,lsb of voltage supply low alarm threshold,,98,,,,R,RW,YES,,YES,YES,YES,YES
+148,,msb of voltage supply high warning threshold,,87,3.465V,,,R,RW,YES,,YES,YES,YES,YES
+149,,lsb of voltage supply high warning threshold,,5a,,,,R,RW,YES,,YES,YES,YES,YES
+150,,msb of voltage supply low warning threshold,,7a,3.135V,,,R,RW,YES,,YES,YES,YES,YES
+151,,lsb of voltage supply low warning threshold,,76,,,,R,RW,YES,,YES,YES,YES,YES
+152,,Reserved,,0,,,,,,,,,,,
+153,,,,0,,,,,,,,,,,
+154,,,,0,,,,,,,,,,,
+155,,,,0,,,,,,,,,,,
+156,,,,0,,,,,,,,,,,
+157,,,,0,,,,,,,,,,,
+158,,,,0,,,,,,,,,,,
+159,,,,0,,,,,,,,,,,
+160,,,,0,,,,,,,,,,,
+161,,,,0,,,,,,,,,,,
+162,,,,0,,,,,,,,,,,
+163,,,,0,,,,,,,,,,,
+164,,,,0,,,,,,,,,,,
+165,,,,0,,,,,,,,,,,
+166,,,,0,,,,,,,,,,,
+167,,,,0,,,,,,,,,,,
+168,,,,0,,,,,,,,,,,
+169,,,,0,,,,,,,,,,,
+170,,,,0,,,,,,,,,,,
+171,,,,0,,,,,,,,,,,
+172,,,,0,,,,,,,,,,,
+173,,,,0,,,,,,,,,,,
+174,,,,0,,,,,,,,,,,
+175,,,,0,,,,,,,,,,,
+176,,msb of receive power high alarm threshold,,8a,5.5dbm,,,R,RW,YES,0.1uW,YES,YES,YES,YES
+177,,lsb of receive power high alarm threshold,,99,,,,R,RW,YES,,YES,YES,YES,YES
+178,,msb of receive power low alarm threshold,,1, -13.6dbm,,,R,RW,YES,,YES,YES,YES,YES
+179,,lsb of receive power low alarm threshold,,b4,,,,R,RW,YES,,YES,YES,YES,YES
+180,,msb of receive power high warning threshold,,6e,4.5dbm,,,R,RW,YES,,YES,YES,YES,YES
+181,,lsb of receive power high warning threshold,,17,,,,R,RW,YES,,YES,YES,YES,YES
+182,,msb of receive power low warning threshold,,3, -10.6dbm,,,R,RW,YES,,YES,YES,YES,YES
+183,,lsb of receive power low warning threshold,,66,,,,R,RW,YES,,YES,YES,YES,YES
+184,,msb of laser bias current high alarm threshold,,c3,100ma,,,R,RW,YES,2uA,YES,YES,YES,YES
+185,,lsb of laser bias current high alarm threshold,,50,,,,R,RW,YES,,YES,YES,YES,YES
+186,,msb of laser bias current low alarm threshold,,30,25ma,,,R,RW,YES,,YES,YES,YES,YES
+187,,lsb of laser bias current low alarm threshold,,d4,,,,R,RW,YES,,YES,YES,YES,YES
+188,,msb of laser bias current high warning threshold,,af,90ma,,,R,RW,YES,,YES,YES,YES,YES
+189,,lsb of laser bias current high warning threshold,,c8,,,,R,RW,YES,,YES,YES,YES,YES
+190,,msb of laser bias current low warning threshold,,44,35ma,,,R,RW,YES,,YES,YES,YES,YES
+191,,lsb of laser bias current low warning threshold,,5c,,,,R,RW,YES,,YES,YES,YES,YES
+192,,msb of transmit power alarm high threshold,,8a,5.5dbm,,,R,RW,YES,0.1uW,YES,YES,YES,YES
+193,,lsb of transmit power alarm high threshold,,99,,,,R,RW,YES,,YES,YES,YES,YES
+194,,msb of transmit power low alarm threshold,,7, -7.3dbm,,,R,RW,YES,,YES,YES,YES,YES
+195,,lsb of transmit power low alarm threshold,,46,,,,R,RW,YES,,YES,YES,YES,YES
+196,,msb of transmit power high warning threshold,,6e,4.5dbm,,,R,RW,YES,,YES,YES,YES,YES
+197,,lsb of transmit power high warning threshold,,17,,,,R,RW,YES,,YES,YES,YES,YES
+198,,msb of transmit power low warning threshold,,e, -4.3dbm,,,R,RW,YES,,YES,YES,YES,YES
+199,,lsb of transmit power low warning threshold,,83,,,,R,RW,YES,,YES,YES,YES,YES
+200,,Reserved,,0,,,,,,,,,,,
+201,,,,0,,,,,,,,,,,
+202,,,,0,,,,,,,,,,,
+203,,,,0,,,,,,,,,,,
+204,,,,0,,,,,,,,,,,
+205,,,,0,,,,,,,,,,,
+206,,,,0,,,,,,,,,,,
+207,,,,0,,,,,,,,,,,
+208,,,,0,,,,,,,,,,,
+209,,,,0,,,,,,,,,,,
+210,,,,0,,,,,,,,,,,
+211,,,,0,,,,,,,,,,,
+212,,,,0,,,,,,,,,,,
+213,,,,0,,,,,,,,,,,
+214,,,,0,,,,,,,,,,,
+215,,,,0,,,,,,,,,,,
+216,,,,0,,,,,,,,,,,
+217,,,,0,,,,,,,,,,,
+218,,,,0,,,,,,,,,,,
+219,,,,0,,,,,,,,,,,
+220,,,,0,,,,,,,,,,,
+221,,,,0,,,,,,,,,,,
+222,,,,0,,,,,,,,,,,
+223,,,,0,,,,,,,,,,,
+224,,,,97?,,,,,,,,,,,
+225,,,,3f?,,,,,,,,,,,
+226,,Reserved,,0,,,,,,,,,,,
+227,,,,0,,,,,,,,,,,
+228,,,,0,,,,,,,,,,,
+229,,,,0,,,,,,,,,,,
+230,,,,0,,,,,,,,,,,
+231,,,,0,,,,,,,,,,,
+232,,,,0,,,,,,,,,,,
+233,,,,0,,,,,,,,,,,
+234,,TX1 input equalization control,,,"0000 NO EQ
+0001 1dB
+¡­¡­
+1010 10dB",get_tx_input_equal_ctl(channel),"set_tx_input_equal_ctl(channel, tmpVal);",RW,RW,YES,EFBA,YES,NO,YES,NO
+,,TX2 input equalization control,,11?,,,,RW,RW,,,pending,pending,YES,
+235,,TX3 input equalization control,,,,,,RW,RW,YES,EFBB,pending,pending,YES,
+,,TX4 input equalization control,,11?,,,,RW,RW,,,pending,pending,YES,
+236,,RX1 output emphasis control,,,"0001 1db
+¡­¡­
+0111 7db",get_rx_output_emphasis_ctl(channel);,"set_rx_output_emphasis_ctl(channel, tmpVal);",RW,RW,YES,EFBC,YES,NO,YES,NO
+,,RX2 output emphasis control,,0?,,,,RW,RW,,,pending,pending,YES,
+237,,RX3 output emphasis control,,,,,,RW,RW,YES,EFBD,pending,pending,YES,
+,,RX4 output emphasis control,,0?,,,,RW,RW,,,pending,pending,YES,
+238,,RX1 output amplitude control,,,"0000 100-400mV
+0001 300-600
+0010 400-800
+0011 600-1200
+others reserved",get_rx_output_amplitude(channel);,"set_rx_output_amplitude(channel, tmpVal);",RW,RW,YES,EFBE,YES,NO,YES,NO
+,,RX2 output amplitude control,,11?,,,,RW,RW,,,pending,pending,YES,
+239,,RX3 output amplitude control,,,,,,RW,RW,YES,EFBF,pending,pending,YES,
+,,RX4 output amplitude control,,11?,,,,RW,RW,,,pending,pending,YES,
+240,7,RX4 SQ Disable,,,,get_rx_sq(channel);,"set_rx_sq(channel, value);",RW,RW,YES,EFC0,YES,NO,YES,NO
+,6,RX3 SQ Disable,,,,,,RW,RW,,,pending,pending,,
+,5,RX2 SQ Disable,,,,,,RW,RW,,,pending,pending,,
+,4,RX1 SQ Disable,,,,,,RW,RW,,,pending,pending,,
+,3,TX4 SQ Disable,,0?,,get_tx_sq(channel);,"set_tx_sq(channel, value);",RW,RW,,,YES,NO,YES,NO
+,2,TX3 SQ Disable,,,,,,RW,RW,,,pending,pending,,
+,1,TX2 SQ Disable,,,,,,RW,RW,,,pending,pending,,
+,0,TX1 SQ Disable,,,,,,RW,RW,,,pending,pending,,
+241,7,RX4  output disable,,0?,4ch,get_rx_output_disable(channel);,"set_rx_output_disable(channel, value);",RW,RW,YES,EFC1,YES,NO,YES,NO
+,6,RX3  output disable,,,,,,RW,RW,,,pending,pending,,
+,5,RX2 output disable,,,,,,RW,RW,,,pending,pending,,
+,4,RX1 output disable,,,,,,RW,RW,,,pending,pending,,
+,3,TX4 adaptive equalization control,,,,get_tx_adapt_equal_ctl(channel);,"set_tx_adapt_equal_ctl(channel, value);",RW,RW,,,YES,NO,YES,NO
+,2,TX3 adaptive equalization control,,,,,,RW,RW,,,,pending,,
+,1,TX2 adaptive equalization control,,,,,,RW,RW,,,,pending,,
+,0,TX1 adaptive equalization control,,,,,,RW,RW,,,,pending,,
+242,,RX1&RX2 power mask,,0,,,,RW,RW,NO,,YES,NO,YES,YES
+243,,RX3&RX4 power mask,,0,,,,RW,RW,NO,,YES,NO,YES,YES
+244,,TX1&TX2 bias mask,,0,,,,RW,RW,NO,,YES,NO,YES,YES
+245,,TX3&TX4 bias mask,,0,,,,RW,RW,NO,,YES,NO,YES,YES
+246,,TX1&TX2 power mask,,0,,,,RW,RW,NO,,YES,NO,YES,YES
+247,,TX3&TX4 power mask,,0,,,,RW,RW,NO,,YES,NO,YES,YES
+248,,Reserved,,0,,,,,,,,,,,
+249,,,,0,,,,,,,,,,,
+250,,,,0,,,,,,,,,,,
+251,,,,0,,,,,,,,,,,
+252,,,,0,,,,,,,,,,,
+253,,,,0,,,,,,,,,,,
+254,,,,0,,,,,,,,,,,
+255,,,,0,,,,,,,,,,,
